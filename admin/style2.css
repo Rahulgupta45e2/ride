@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    background-color: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+:root {
+    --main-color: #fe5b3d;
+    --second-color: #ffac38;
+    --text-color: #444;
+    --gradient: linear-gradient(#fe5b3d, #ffac38);
+}
+.select{
+    box-sizing: border-box;
+    width: 70%;
+    height: 50vh;
+    background-color: rgba(8, 191, 176, 0.61);
+    border-radius: 2rem;
+}
+.select h1{
+    margin: 1.5rem;
+    padding: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    color: var(--main-color);
+} 
+.select h1 span{
+    margin: 0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    color: aqua;
+}
+.select.feild{
+    box-sizing: border-box;
+    width: 70%;
+    height: 50vh;
+    background-color: rgb(8, 43, 75);
+    border-radius: 2rem; 
+}
+.select.feild.txt{
+    width: 70%;
+    text-align: center;
+    padding: 1rem;
+    justify-content: centerx;
+}
+.select.feild.txt{
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    justify-content: center;
+
+}

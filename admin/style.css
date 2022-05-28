@@ -1,0 +1,95 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+body{
+background-color: rgb(248, 248, 255);
+margin: 0;
+padding: 0;
+text-decoration: rebeccapurple;
+text-align: center;
+font-family: 'Poppins', sans-serif;
+display: grid;
+}
+:root {
+    --main-color: #fe5b3d;
+    --second-color: #ffac38;
+    --text-color: #444;
+    --gradient: linear-gradient(#fe5b3d, #ffac38);
+    --btn-color:#474fa0;
+}
+.container{
+    justify-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 3rem;
+    background-color:rgba(246, 241, 241, 0.863);
+    width: auto;
+}
+.container h1{
+    font-family: 'Poppins', sans-serif;
+    color: #fe5b3d;
+}
+.container .field{
+    width: 60%;
+    margin-top: 2px;
+    padding: 20px;
+    text-align: left;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    border-radius: 2rem;
+    cursor: pointer;
+
+}
+.container input{
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    background-color:ghostwhite;
+    border-radius: 2rem;
+    margin: 12px;
+    text-align: center;
+    justify-content: center;
+    height: 3rem;
+    text-decoration: red;
+    border: #fe5b3d;
+    cursor: pointer;
+}
+.container .input-file{
+    font-family: 'Poppins', sans-serif;
+    background-color:ghostwhite;
+    border-radius: 2rem;
+    /* height: 3rem; */
+    display: flex;
+    border:1px solid ghostwhite;
+    justify-content: center;
+    cursor: pointer;
+
+}
+.container input:focus { 
+    outline: none !important;
+    border-color: #e48f2e;
+    box-shadow: 1px 1px 10px #f5450b;
+ }
+ .container .input-file-inside{
+    width:min-content;
+    height:1.5rem;
+    border: #fe5b3d;
+}
+
+.container.field.selct .btn{
+    width:100;
+    font-family: 'Poppins', sans-serif;
+    background-color:var(--btn-color);
+    border-radius: 2rem;
+    margin: 12px;
+    text-align: center;
+    justify-content: center;
+    height: 3rem;
+    outline:rgb(220, 135, 32);
+    cursor: pointer;
+}
+.container .field .btn{
+    background-color: #474fa0;
+}
+.container .field .btn:hover{
+    background-color:var(--main-color);
+}
