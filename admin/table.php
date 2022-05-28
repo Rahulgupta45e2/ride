@@ -1,3 +1,11 @@
+<?php
+require_once('../init.php');
+if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
+    $_SESSION['admin_err'] = "You should loggedin as Admin";
+    header('location: admin.php');
+}
+?>
+
 <html lang="en">
 
 <head>
@@ -28,7 +36,7 @@
 </div>
 </th>
 <th scope="col" class="px-6 py-3">
-id
+Sno.
 </th>
 <th scope="col" class="px-6 py-3">
 user_id
@@ -68,6 +76,15 @@ email
 </tr>
 </thead>
 <tbody>
+
+<?php
+$sql = "SELECT * FROM booking";
+$res = mysqli_query($conn, $sql);
+$i = 0;
+while($rows = mysqli_fetch_assoc($res)){
+    $i++;
+?>
+
 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 <td class="w-4 p-4">
 <div class="flex items-center">
@@ -76,36 +93,46 @@ email
 </div>
 </td>
 <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-Apple MacBook Pro 17"
+<?= $i ?>
 </th>
 <td class="px-6 py-4">
-Sliver
+<!-- user id -->
+<?= $rows['user_id'] ?> 
 </td>
 <td class="px-6 py-4">
-Laptop
+<!-- car id -->
+<?= $rows['car_id'] ?>
 </td>
 <td class="px-6 py-4">
-$2999
+<!-- name -->
+<?= $rows['name'] ?>
 </td>
 <td class="px-6 py-4">
-$2999
+<!-- email -->
+<?= $rows['email'] ?>
 </td>
 <td class="px-6 py-4">
-    $2999
+<!-- pickup -->
+<?= $rows['pickup'] ?>
     </td>
     <td class="px-6 py-4">
-        $2999
+    <!-- dropup -->
+    <?= $rows['dropup'] ?>
         </td>
         <td class="px-6 py-4">
-            $2999
+            <!-- location -->
+            <?= $rows['location'] ?>
             </td>
             <td class="px-6 py-4">
-                $2999
+                <!-- doc nmae  -->
+                <?= $rows['doc'] ?>
                 </td><td class="px-6 py-4">
-                    $2999
+                    <!-- doc no -->
+                    <?= $rows['docno'] ?>
                     </td>
 <td class="px-6 py-4">
-    $2999
+    <!-- status -->
+    <?php if( $rows['status'] ){ echo 'Booked'; } ?>
 </td>
 
 <td class="px-6 py-4 text-right">
@@ -115,7 +142,12 @@ $2999
     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">delete</a>
     </td>
 </tr>
-<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+<?php
+}
+?>
+
+
+<!-- <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
 <td class="w-4 p-4">
 <div class="flex items-center">
 <input id="checkbox-table-2" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
@@ -141,8 +173,8 @@ $1999
 <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
 <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">delete</a>
 </td>
-</tr>
-<tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
+</tr> -->
+<!-- <tr class="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
 <td class="w-4 p-4">
 <div class="flex items-center">
 <input id="checkbox-table-2" type="checkbox" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
@@ -195,7 +227,9 @@ $1999
 <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
 <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">delete</a>
 </td>
-</tr>
+</tr> -->
+
+
 </tbody>
 </table>
 </div>

@@ -30,24 +30,16 @@ $sql = 'SELECT * FROM users WHERE name = "'.$_SESSION['name']. '"';
 <section>
     <table>
         <tr>
-            <th>Model no.</th>
-            <td><?= $rows['model'] ?></td>
+            <th>Name.</th>
+            <td><?= $rows['Name'] ?></td>
         </tr>
         <tr>
-            <th>Price</th>
-            <td><?= $rows['price'] ?></td>
+            <th>Email</th>
+            <td><?= $rows['Email'] ?></td>
         </tr>
         <tr>
-            <th>Type</th>
-            <td><?= $rows['type'] ?></td>
-        </tr>
-        <tr>
-            <th>Type</th>
-            <td><?= $rows['year'] ?></td>
-        </tr>
-        <tr>
-            <th>Fuel Type</th>
-            <td><?= $rows['fuel'] ?></td>
+            <th>password</th>
+            <td><?= $rows['Password'] ?></td>
         </tr>
         <!-- <tr>
             <th></th>
@@ -60,10 +52,10 @@ $sql = 'SELECT * FROM users WHERE name = "'.$_SESSION['name']. '"';
 ?>
 <main>
     <img src="img/<?= $rows['img'] ?>" alt="">
-    <form action="booked.php" method="post">
+    <form action="USERdetail.php" method="post">
         <input type="hidden" name="user_id" value="<?= $user_rows['id'] ?>">
         <input type="hidden" name="car_id" value="<?= $rows['id'] ?>">
-        <h1>Booking</h1>
+        <h1>USER</h1>
      <div class="form">
              <div>
              <label for="">Username</label>
