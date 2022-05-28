@@ -1,3 +1,6 @@
+<?php
+require_once('../init.php');
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -10,6 +13,16 @@
 <!-- //lined-icons -->
 </head> 
 <body>
+	<!-- message dikhega yeh code -->
+	<?php
+	if(isset( $_SESSION['admin_err']) ){
+		echo '<div>
+				'. $_SESSION["admin_err"] .'
+			</div>';
+		unset($_SESSION['admin_err']);
+	}
+	?>
+	<!-- message dikhega yeh code -->
 	<div class="container">
 		<form  action="dev/auth.php" method="post" class="field">
 		<h2>Sign In</h2>
@@ -19,7 +32,7 @@
 			</div>    
 			<div class="select select-password">
 				<label for="password">password</label>
-				<input id="password" name="pwd" type="password" aria-label="password"class="abc" required>
+				<input id="password" name="pwd" type="password" aria-label="password" class="abc" required>
 			</div>    
 			<input type="submit" value="submit" class="btn">
 			<div>
