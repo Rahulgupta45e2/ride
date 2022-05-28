@@ -43,8 +43,18 @@ font-family: 'Poppins', sans-serif;
 
 }
 .abc{
-    padding:6rem !important;
+    
+    padding: 1rem !important;
+    width: 70%;
+    height: 1.5rem;
+    background-color: darkgrey;
+    outline: none;
+    border-left: hidden;
+    border: #a9a9a90f;
+    font-size: 20px;
+    color: skyblue;
 }
+
 .select-username{
     margin-bottom: 0.625rem;
     text-transform: uppercase;
@@ -61,5 +71,5 @@ font-family: 'Poppins', sans-serif;
 }
 .container .btn{
     width: 70%;
-    height: 1rem;
+    height: 1.5rem;
 }

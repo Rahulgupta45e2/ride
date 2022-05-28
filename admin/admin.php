@@ -19,7 +19,7 @@
 			</div>    
 			<div class="select select-password">
 				<label for="password">password</label>
-				<input id="password" name="pwd" type="password" aria-label="password" required>
+				<input id="password" name="pwd" type="password" aria-label="password"class="abc" required>
 			</div>    
 			<input type="submit" value="submit" class="btn">
 			<div>
