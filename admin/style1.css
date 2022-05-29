@@ -38,7 +38,7 @@ font-family: 'Poppins', sans-serif;
 .container .field .select label{
     margin-top: 1rem;
     padding: 1.4rem;
-    color: azure;
+    color: #ffff;
     font-family: 'Poppins', sans-serif;
 
 }
@@ -46,22 +46,26 @@ font-family: 'Poppins', sans-serif;
     padding:1rem !important;
     width: 70%;
     height: 2vh;
+    background-color: #fe5b3d;
 }
 .select-username{
     margin-bottom: 0.625rem;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
     color:var(--text-color);
-    background-color: darkgray;
+    background-color: #fe5b3d;
 }
 .select-password{
     margin-bottom: 0.625rem;
     text-transform: uppercase;
     font-family: 'Poppins', sans-serif;
     color:var(--text-color);
-    background-color: darkgray;
+    background-color: #fe5b3d;
 }
 .container .btn{
     width: 70%;
-    height: 1rem;
+    height: 2rem;
+    background-color: #fe5b3d;
+    border-radius: 1.5rem;
+    border: cornsilk;
 }

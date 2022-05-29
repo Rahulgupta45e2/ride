@@ -24,7 +24,7 @@ if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
     <title>Document</title>
 </head>
 <body>   
-<h1>booking data</h1>
+<h1>car data</h1>
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -39,38 +39,31 @@ if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
 Sno.
 </th>
 <th scope="col" class="px-6 py-3">
-user_id
+carid
 </th>
 <th scope="col" class="px-6 py-3">
-car_id
+car-name
 </th>
 <th scope="col" class="px-6 py-3">
-name
+model
 </th>
 <th scope="col" class="px-6 py-3">
-email
+type
 </th>
 <th scope="col" class="px-6 py-3">
-    picup
-    </th>
-    <th scope="col" class="px-6 py-3">
-        dropup
-        </th>
-        <th scope="col" class="px-6 py-3">
-            location
-            </th>
-            <th scope="col" class="px-6 py-3">
-                doc name
-                </th>
-                <th scope="col" class="px-6 py-3">
-                    doc no
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                        status
-                        </th>
-
+fuel
+</th>
 <th scope="col" class="px-6 py-3">
-<span class="sr-only">Edit</span>
+price
+</th>
+<th scope="col" class="px-6 py-3">
+image
+</th>
+<th scope="col" class="px-6 py-3">
+year
+</th>
+<th scope="col" class="px-6 py-3">
+<span class="sr-only">Edit <a href="UPDATE.php"></a></span>
 <span class="sr-only">delete</span>
 </th>
 </tr>
@@ -78,7 +71,7 @@ email
 <tbody>
 
 <?php
-$sql = "SELECT * FROM booking";
+$sql = "SELECT * FROM `cars` ORDER BY `img` ASC";
 $res = mysqli_query($conn, $sql);
 $i = 0;
 while($rows = mysqli_fetch_assoc($res)){
@@ -97,46 +90,38 @@ while($rows = mysqli_fetch_assoc($res)){
 </th>
 <td class="px-6 py-4">
 <!-- user id -->
-<?= $rows['user_id'] ?> 
+<?= $rows['id'] ?> 
 </td>
 <td class="px-6 py-4">
 <!-- car id -->
-<?= $rows['car_id'] ?>
-</td>
-<td class="px-6 py-4">
-<!-- name -->
 <?= $rows['name'] ?>
 </td>
 <td class="px-6 py-4">
+<!-- name -->
+<?= $rows['model'] ?>
+</td>
+<td class="px-6 py-4">
 <!-- email -->
-<?= $rows['email'] ?>
+<?= $rows['type'] ?>
 </td>
 <td class="px-6 py-4">
-<!-- pickup -->
-<?= $rows['pickup'] ?>
-    </td>
-    <td class="px-6 py-4">
-    <!-- dropup -->
-    <?= $rows['dropup'] ?>
-        </td>
-        <td class="px-6 py-4">
-            <!-- location -->
-            <?= $rows['location'] ?>
-            </td>
-            <td class="px-6 py-4">
-                <!-- doc nmae  -->
-                <?= $rows['doc'] ?>
-                </td><td class="px-6 py-4">
-                    <!-- doc no -->
-                    <?= $rows['docno'] ?>
-                    </td>
-<td class="px-6 py-4">
-    <!-- status -->
-    <?php if( $rows['status'] ){ echo 'Booked'; } ?>
+<!-- email -->
+<?= $rows['fuel'] ?>
 </td>
-
+<td class="px-6 py-4">
+<!-- email -->
+<?= $rows['price'] ?>
+</td>
+<td class="px-6 py-4">
+<!-- email -->
+<?= $rows['img'] ?>
+</td>
+<td class="px-6 py-4">
+<!-- email -->
+<?= $rows['year'] ?>
+</td>
 <td class="px-6 py-4 text-right">
-<a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+<a href="UPDATE.php" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
 </td>
 <td class="px-6 py-4 text-right">
     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">delete</a>
