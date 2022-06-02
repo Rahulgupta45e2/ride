@@ -205,6 +205,15 @@ ride& drive provides efficient car rental solution and dynamic car rental websit
             <br>
             
     <div class="select-form">
+    <?php 
+   $sql = "INSERT INTO `feedback` (`name`, `feedback`) VALUES (NULL, '". $_POST['name'] ."', '". $_POST['feedback'] ."')";
+    $res = mysqli_query($conn, $sql);
+if(!$res){
+    echo mysqli_error($conn);
+    die();
+}
+echo 'data inserted';
+?>
 
          <h1 class="text"> Enter your feedback </h1>
         <form  action="" method="post">

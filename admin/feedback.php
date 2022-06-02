@@ -6,6 +6,7 @@ if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
 }
 ?>
 
+
 <html lang="en">
 
 <head>
@@ -56,7 +57,7 @@ feedback
 <tbody>
 
 <?php
-$sql = "SELECT * FROM `cars` ORDER BY `img` ASC";
+$sql = "SELECT * FROM `feedback`";
 $res = mysqli_query($conn, $sql);
 $i = 0;
 while($rows = mysqli_fetch_assoc($res)){
@@ -83,7 +84,7 @@ while($rows = mysqli_fetch_assoc($res)){
 </td>
 <td class="px-6 py-4">
 <!-- name -->
-<?= $rows['model'] ?>
+<?= $rows['feedback'] ?>
 </td>
 <td class="px-6 py-4 text-right">
 <a href="UPDATE.php" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>

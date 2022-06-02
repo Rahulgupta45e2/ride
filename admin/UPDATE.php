@@ -1,5 +1,14 @@
 <html lang="en">
-
+<?php
+require_once('../init.php');
+$sql = "UPDATE `cars` SET `id`='[value]',`name`='[value]',`model`='[value]',`type`='[value]',`fuel`='[value]',`price`='[value]',`img`='[value]',`year`='[value]' WHERE 1"; 
+$res = mysqli_query($conn, $sql);
+if(!$res){
+    echo mysqli_error($conn);
+    die();
+}
+echo 'data inserted';
+?>
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,32 +23,32 @@
 		<h1>UPDATE CAR details</h1>
 		<form class="field" action="" method="post">
 			<div class="input">
-				<input type="text" placeholder="car name" required>
+				<input type="text" name="name" placeholder="car name" required>
 
 			</div>
 			<div class="input">
-				<input type="text" placeholder="model name" required>
+				<input type="text" name="model"  placeholder="model name" required>
 
 			</div>
 
 			<div class="input">
-				<input type="text" placeholder="no.of seet in cars" required>
+				<input type="text"  name="type"  placeholder="no.of seet in cars" required>
 
 			</div>
 			<div class="input">
-				<input type="text" placeholder="fuel" required>
+				<input type="text"  name="fuel"  placeholder="fuel" required>
 
 			</div>
 			<div class="input">
-				<input type="text" placeholder="price" required>
+				<input type="text" name="price"  placeholder="price" required>
 
 			</div>
 			<div class="input-file">
-				<input type="file" class="input-file-inside" required>
+				<input type="file" name="img"  class="input-file-inside" required>
 
 			</div>
 			<div class="input">
-				<input type="text"  placeholder="year" required>
+				<input type="text"  name="year"  placeholder="year" required>
 	
 			</div>	
 			<div class="selct">
