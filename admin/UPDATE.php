@@ -1,7 +1,7 @@
 <html lang="en">
 <?php
 require_once('../init.php');
-$sql = "UPDATE `cars` SET `id`='[value]',`name`='[value]',`model`='[value]',`type`='[value]',`fuel`='[value]',`price`='[value]',`img`='[value]',`year`='[value]' WHERE 1"; 
+$sql = "UPDATE cars SET name='joony' WHERE id=2"; 
 $res = mysqli_query($conn, $sql);
 if(!$res){
     echo mysqli_error($conn);
