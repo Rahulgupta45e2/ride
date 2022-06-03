@@ -1,14 +1,27 @@
-<html lang="en">
 <?php
 require_once('../init.php');
-$sql = "UPDATE cars SET name='joony' WHERE id=2"; 
-$res = mysqli_query($conn, $sql);
-if(!$res){
-    echo mysqli_error($conn);
-    die();
+if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
+	$_SESSION['admin_err'] = "You should loggedin as Admin";
+	header('location: admin.php');
 }
-echo 'data inserted';
+	$id = $_GET['i'];
+	$sql = "select * from cars where id = ".$id."";
+	$res = mysqli_query($conn, $sql);
+	if(!$res){
+		die('Error in fetch query');
+	}
+	$rows = mysqli_fetch_assoc($res);
+
+	if(isset($_POST['submit'])){
+		$sql = "update cars set name='". $_POST['name'] ."' , model='". $_POST['model'] ."' , type='". $_POST['type'] ."' , fuel='". $_POST['fuel'] ."' , price='". $_POST['price'] ."' , year='". $_POST['year'] ."' where id=". $id ."";
+		$res = mysqli_query($conn, $sql);
+		if(!$res){
+			die('Error in update query: '. mysqli_error());
+		}
+		header('location: car_data.php');
+	}
 ?>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,36 +36,36 @@ echo 'data inserted';
 		<h1>UPDATE CAR details</h1>
 		<form class="field" action="" method="post">
 			<div class="input">
-				<input type="text" name="name" placeholder="car name" required>
+				<input type="text" name="name" value="<?= $rows['name'] ?>" placeholder="car name" required>
 
 			</div>
 			<div class="input">
-				<input type="text" name="model"  placeholder="model name" required>
+				<input type="text" name="model" value="<?= $rows['model'] ?>" placeholder="model name" required>
 
 			</div>
 
 			<div class="input">
-				<input type="text"  name="type"  placeholder="no.of seet in cars" required>
+				<input type="text"  name="type" value="<?= $rows['type'] ?>" placeholder="no.of seet in cars" required>
 
 			</div>
 			<div class="input">
-				<input type="text"  name="fuel"  placeholder="fuel" required>
+				<input type="text"  name="fuel" value="<?= $rows['fuel'] ?>" placeholder="fuel" required>
 
 			</div>
 			<div class="input">
-				<input type="text" name="price"  placeholder="price" required>
+				<input type="text" name="price" value="<?= $rows['price'] ?>" placeholder="price" required>
 
 			</div>
 			<div class="input-file">
-				<input type="file" name="img"  class="input-file-inside" required>
+				<input type="file" name="img" value="" class="input-file-inside">
 
 			</div>
 			<div class="input">
-				<input type="text"  name="year"  placeholder="year" required>
+				<input type="text"  name="year" value="<?= $rows['year'] ?>" placeholder="year" required>
 	
 			</div>	
 			<div class="selct">
-				<input class="btn" type="submit" value="submit">
+				<input class="btn" name="submit" type="submit" value="submit">
 	
 			</div>	
 		</form>
