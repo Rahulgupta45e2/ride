@@ -85,10 +85,10 @@ while($rows = mysqli_fetch_assoc($res)){
 <?= $rows['email'] ?>
 </td>
 <td class="px-6 py-4 text-right">
-<a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+<a href="userupdate.php?i=<?= $rows['id'] ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
 </td>
 <td class="px-6 py-4 text-right">
-    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">delete</a>
+<a href="deleteusers.php?i=<?= $rows['id'] ?>"class="font-medium text-blue-600 dark:text-blue-500 hover:underline">delete</a>
     </td>
 </tr>
 <?php

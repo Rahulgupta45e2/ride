@@ -49,7 +49,7 @@ name
 feedback
 </th>
 <th scope="col" class="px-6 py-3">
-<span class="sr-only">Edit <a href="UPDATE.php"></a></span>
+<span class="sr-only">Edit </span>
 <span class="sr-only">delete</span>
 </th>
 </tr>
@@ -87,7 +87,7 @@ while($rows = mysqli_fetch_assoc($res)){
 <?= $rows['feedback'] ?>
 </td>
 <td class="px-6 py-4 text-right">
-<a href="UPDATE.php" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+<a href="feedbackup.php?i=<?= $rows['id'] ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
 </td>
 <td class="px-6 py-4 text-right">
     <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">delete</a>
