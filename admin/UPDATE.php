@@ -13,7 +13,7 @@ if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
 	$rows = mysqli_fetch_assoc($res);
 
 	if(isset($_POST['submit'])){
-		$sql = "update cars set name='". $_POST['name'] ."' , model='". $_POST['model'] ."' , type='". $_POST['type'] ."' , fuel='". $_POST['fuel'] ."' , price='". $_POST['price'] ."' , year='". $_POST['year'] ."' where id=". $id ."";
+		$sql = "update cars set name='". $_POST['name'] ."' , model='". $_POST['model'] ."' ,img='". $_POST['img'] ."' , type='". $_POST['type'] ."' , fuel='". $_POST['fuel'] ."' , price='". $_POST['price'] ."' , year='". $_POST['year'] ."' where id=". $id ."";
 		$res = mysqli_query($conn, $sql);
 		if(!$res){
 			die('Error in update query: '. mysqli_error());

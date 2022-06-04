@@ -22,7 +22,7 @@ require_once('../header.php')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>ADMIN LOGIN</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -40,7 +40,7 @@ require_once('../header.php')
                     </div>
 
                     <div class="signin-form">
-                        <h2 class="form-title">Login</h2>
+                        <h2 class="form-title">Admin Login</h2>
                         <form method="POST" class="flex flex-col gap-4 my-4" action="dev/auth.php" id="login-form">
                             <div class="">
                                 <label for="your_name"><i class=""></i></label>

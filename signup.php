@@ -98,7 +98,7 @@ if( isset($_POST["submit"]) ){
     <?php
     // var_dump($res);
     // var_dump($_POST);
-    var_dump($do);
+    
     ?>
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
