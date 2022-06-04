@@ -1,5 +1,7 @@
 <?php
 require_once('../init.php');
+require_once('dashboard.php');
+if(isset($_POST['name'])){
 $sql = "INSERT INTO `cars` (`id`, `name`, `model`, `type`, `fuel`, `price`, `img`, `year`) VALUES (NULL, '". $_POST['name'] ."', '". $_POST['model'] ."', '". $_POST['type'] ."', '". $_POST['fuel'] ."', '". $_POST['price'] ."', '". $_POST['img'] ."', '". $_POST['year'] ."')";
 $res = mysqli_query($conn, $sql);
 if(!$res){
@@ -7,6 +9,7 @@ if(!$res){
     die();
 }
 echo 'data inserted';
+}
 ?>
 <html lang="en">
 

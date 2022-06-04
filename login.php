@@ -43,8 +43,6 @@ if( isset($_POST["submit"]) ){
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/settingr.css">
 </head>
-
-
         <!-- Sing in  Form -->
         <section class="sign-in">
             <div class="container">
@@ -71,9 +69,9 @@ if( isset($_POST["submit"]) ){
                             </div>
                         </form>
                         <div class="social-login">
-                            <span class="social-label">Or login with others</span>
+                            <span class="social-label"></span>
                             <span class="social-label"><a href="forget.php">Forget password</a></span>
-                            <span class="social-label"><a href="admin/admin.php">login admin</a></span>
+                            <span class="social-label"><a href="admin/adminlog.php">login admin</a></span>
                             <ul class="socials">
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
@@ -84,9 +82,7 @@ if( isset($_POST["submit"]) ){
                 </div>
             </div>
         </section>
-
     </div>
-
     <!-- JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="js/main.js"></script>
