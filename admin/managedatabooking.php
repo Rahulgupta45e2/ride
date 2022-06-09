@@ -1,13 +1,20 @@
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style2.css">
-    <title>edit the booking user</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link  rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-    <div class="select">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"><?php include('dashboard.php')?></div>
+            <div class="col-md-9 mt-5 pt-5">
+            <div class="select">
         <h1> edit and <span>update data</span></h1>
         <form action="" method="post" class="feild">
          <div class="txt">
@@ -42,6 +49,8 @@
             <button> edit</button>
         </div>
         </form>
+    </div></div>
+        </div>
     </div>
 </body>
 </html>

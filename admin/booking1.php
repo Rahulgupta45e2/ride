@@ -21,7 +21,6 @@ if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
 		header('location: car_data.php');
 	}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,10 +36,10 @@ if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
         <div class="row">
             <div class="col-md-3"><?php include('dashboard.php')?></div>
             <div class="col-md-9 mt-5 pt-5">
-         <h1>UPDATE booking details</h1>
-           <form class="field" action="" method="post">
+           <h1>UPDATE CAR details</h1>
+        <form class="field" action="" method="post">
           
-             <div class="input">
+        <div class="input">
                 <input type="text" name="name" value="<?= $rows['name'] ?>" placeholder="car name" required>
 
             </div>
@@ -81,7 +80,7 @@ if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
 
             </div>
         </form>
-    </div>
+    </div></div>
+        </div>
 </body>
-
 </html>

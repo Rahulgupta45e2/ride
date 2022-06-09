@@ -1,28 +1,19 @@
-<?php
-require_once('../init.php');
-if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
-    $_SESSION['admin_err'] = "You should loggedin as Admin";
-    header('location: admin.php');
-}
-?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        h1{
-            text-align: center;
-            text-transform: capitalize;
-            color: rebeccapurple;
-            font-family: 'Poppins', sans-serif;
-        }
-        </style>
-    <title>feedback data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link  rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
-<body>   
-<h1>feedback data</h1>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"><?php include('dashboard.php')?></div>
+            <div class="col-md-9 mt-5 pt-5">
+            <h1>user data</h1>
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -37,24 +28,26 @@ if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
 Sno.
 </th>
 <th scope="col" class="px-6 py-3">
-car id
+user_id
 </th>
 <th scope="col" class="px-6 py-3">
 name
 </th>
 <th scope="col" class="px-6 py-3">
-feedback
+email
 </th>
-<th scope="col" class="px-6 py-3">
-<span class="sr-only">Edit </span>
-<span class="sr-only">delete</span>
+<th class="text-center">
+    <span class="">Edit</span>
+</th>
+<th class="text-center">
+    <span class="">delete</span>
 </th>
 </tr>
 </thead>
 <tbody>
 
 <?php
-$sql = "SELECT * FROM `feedback`";
+$sql = "SELECT * FROM users";
 $res = mysqli_query($conn, $sql);
 $i = 0;
 while($rows = mysqli_fetch_assoc($res)){
@@ -76,18 +69,18 @@ while($rows = mysqli_fetch_assoc($res)){
 <?= $rows['id'] ?> 
 </td>
 <td class="px-6 py-4">
-<!-- car id -->
+<!-- name -->
 <?= $rows['name'] ?>
 </td>
 <td class="px-6 py-4">
-<!-- name -->
-<?= $rows['feedback'] ?>
+<!-- email -->
+<?= $rows['email'] ?>
 </td>
 <td class="px-6 py-4 text-right">
-<a href="feedbackup.php?i=<?= $rows['id'] ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+<a href="u-update.php?i=<?= $rows['id'] ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
 </td>
 <td class="px-6 py-4 text-right">
-    <a href="deletefeedback.php?i=<?= $rows['id'] ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">delete</a>
+<a href="deleteuser.php?i=<?= $rows['id'] ?>"class="font-medium text-blue-600 dark:text-blue-500 hover:underline">delete</a>
     </td>
 </tr>
 <?php
@@ -96,6 +89,8 @@ while($rows = mysqli_fetch_assoc($res)){
 </tbody>
 </table>
 </div>
-
+		</div>
+        </div>
+    </div>
 </body>
 </html>

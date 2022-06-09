@@ -12,72 +12,30 @@ if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
 	}
 	$rows = mysqli_fetch_assoc($res);
 
-
-
 	if(isset($_POST['submit'])){
-    /**       */
-	
-	$image="";
-        // echo "amol";
-    // var_dump($_FILES['img']["tmp_name"]);
-    // die();
-    $image = $_FILES['img']['name'];
-     $temp_name = $_FILES["img"]["tmp_name"];
-
-     $allowedExts = array("gif", "jpeg", "jpg", "png");
-     $type = pathinfo($image, PATHINFO_EXTENSION);
-    //  echo "<br>";
-    //  echo $type;
-    //  echo "<br>";
-//     (($type == "image/gif")
-//     || ($type == "jpeg")
-//     || ($type == "jpg")
-//     || ($type == "pjpeg")
-// || ($type == "x-png")
-//    || ($type == "png"))
-// && 
-//  if (($_FILES["img"]["size"] < 50000) ) {
-        $dest = '../img/'. $_FILES['img']['name'];
-         $m = move_uploaded_file($_FILES["img"]["tmp_name"],$dest);
-        // print_r($m);
-         if ($m) {
-             echo "uploaded!";
-			 $sql = "update cars set img='". "".basename() ."' , model='". $_POST['model'] ."' ,img='". $_POST['img'] ."' , type='". $_POST['type'] ."' , fuel='". $_POST['fuel'] ."' , price='". $_POST['price'] ."' , year='". $_POST['year'] ."' where id=". $id ."";
-			 $res = mysqli_query($conn, $sql);
-			 if(!$res){
-				 die('Error in update query: '. mysqli_error());
-			 }	 
-        } else {
-             echo "no";
-             die();
-         }
-    //  } else {
-    //  echo "file type is not image";
-    //  }
-	
-    /**       */
-
 		$sql = "update cars set name='". $_POST['name'] ."' , model='". $_POST['model'] ."' ,img='". $_POST['img'] ."' , type='". $_POST['type'] ."' , fuel='". $_POST['fuel'] ."' , price='". $_POST['price'] ."' , year='". $_POST['year'] ."' where id=". $id ."";
 		$res = mysqli_query($conn, $sql);
 		if(!$res){
 			die('Error in update query: '. mysqli_error());
 		}
-		header('location: car-updata.php');
+		header('location: book.php');
 	}
 ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link  rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
-
 <body>
-	
-<div class="container">
-		<h1>UPDATE CAR details</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"><?php include('dashboard.php')?></div>
+            <div class="col-md-9 mt-5 pt-5"><h1>UPDATE CAR details</h1>
 		<form class="field" action="" method="post">
 			<div class="input">
 				<input type="text" name="name" value="<?= $rows['name'] ?>" placeholder="car name" required>
@@ -114,6 +72,8 @@ if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
 			</div>	
 		</form>
 	</div>
+		</div>
+        </div>
+    </div>
 </body>
-
 </html>

@@ -22,7 +22,8 @@ display: grid;
     box-sizing: border-box;
     border-radius: 3rem;
     background-color:rgba(246, 241, 241, 0.863);
-    width: auto;
+    width: 50%;
+    outline: hidden;
 }
 .container h1{
     font-family: 'Poppins', sans-serif;

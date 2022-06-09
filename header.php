@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,18 +7,16 @@
     <link rel="stylesheet" href="<?= PATH ?>/style3.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
-
-<body>
-    
+<body> 
 <header>
     <a href="#" class="logo"><img src="img/w1.jpeg" alt=""></a>
     <div class="bx bx-menu" id="menu-icon"></div>
     <ul class="navbar">
-        <li><a href="<?= PATH ?>index.php">home</a></li>
+        <li><a href="<?= PATH ?>/index.php">home</a></li>
         <li><a href="#ride">ride</a></li>
-        <li><a href="index.php#booking">booking</a></li>
-        <li><a href="">about</a></li>
-        <li><a href="">reviews</a></li>
+        <li><a href="/ride&drive/index.php#booking">booking</a></li>
+        <li><a href="/ride&drive/index.php#about">about</a></li>
+        <li><a href="/ride&drive/index.php#reviews">reviews</a></li>
     </ul>
     <div class="header-btn">
         <?php
