@@ -13,7 +13,8 @@
         <div class="row">
             <div class="col-md-3"><?php include('dashboard.php')?></div>
             <div class="col-md-9 mt-5 pt-5">
-            h1>feedback data</h1>
+            <h1>feedback data</h1>
+            
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">

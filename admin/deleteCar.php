@@ -10,5 +10,5 @@ if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
   if(!$res){
     die('Error in delete query: '. mysqli_error());
   }
-  header('location: car_data.php');
+  header('location: book.php');
 ?>

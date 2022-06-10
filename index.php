@@ -91,9 +91,7 @@ When you choose us for your car for rent booking requirements,
             $sql = "SELECT * FROM cars";
             $res = mysqli_query($conn, $sql);
             while($rows = mysqli_fetch_assoc($res)){
-                // echo '<pre>';
-                // var_dump($rows);
-                // echo '</pre>';
+        
                 echo '<div class="box">
             <div class="box-img">
                 <img src="img/'. $rows['img'] .'" alt="">

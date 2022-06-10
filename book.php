@@ -95,6 +95,6 @@ $sql = 'SELECT * FROM users WHERE name = "'.$_SESSION['name']. '"';
              <input type="text" name="docno" class="form-txts" value="<?= $_POST['docno'] ?>">
              </div>
               <button class="form-btn"> pay offline </button>
-        </div>                <input class="form-btn" type="submit" name="submit" >
+        </div>                <input class="form-btn" type="submit" name="hsubmit" >
     </form>
 </main><hr>
