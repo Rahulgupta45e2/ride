@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 28, 2022 at 08:39 AM
+-- Generation Time: Jun 10, 2022 at 06:15 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -37,7 +37,7 @@ CREATE TABLE `booking` (
   `dropup` date NOT NULL,
   `location` text NOT NULL,
   `doc` varchar(2000) NOT NULL,
-  `docno` int(38) NOT NULL,
+  `docno` bigint(38) NOT NULL,
   `status` int(38) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -47,8 +47,10 @@ CREATE TABLE `booking` (
 
 INSERT INTO `booking` (`id`, `user_id`, `car_id`, `name`, `email`, `pickup`, `dropup`, `location`, `doc`, `docno`, `status`) VALUES
 (1, 15, 6, 'amol', 'amol@gmail.com', '2022-05-14', '2022-05-21', 'model town', 'Voter card', 1234, 1),
-(2, 15, 12, 'sudhir ji', 'sudhir@gmail.com', '2022-05-14', '2022-05-15', 'prem nagar ludhiana', 'Adhaar card', 1234445555, 0),
-(7, 17, 4, 'dilip kumar yadav', 'dilip1200@gamil.com', '2022-05-21', '2022-05-23', 'ASHOK Nagar', 'Voter card', 0, 1);
+(7, 17, 4, 'dilip kumar yadav', 'dilip1200@gamil.com', '2022-05-21', '2022-05-23', 'ASHOK Nagar', 'Voter card', 0, 1),
+(20, 18, 5, 'hgjj fghjk', 'admin12233@gamil.com', '2022-06-16', '2022-07-08', 'town', 'Adhaar card', 55557777999, 1),
+(23, 15, 8, 'rahul gupta', 'hello@gm.com', '2022-06-17', '2022-06-24', 'prem nagar ludhiana', 'Adhaar card', 1111, 1),
+(25, 15, 13, 'Radhe shyam gupta  lumar', 'hello@gm.com', '2022-06-10', '2022-06-24', 'duummy', 'Adhaar card', 123456, 1);
 
 -- --------------------------------------------------------
 
@@ -72,7 +74,7 @@ CREATE TABLE `cars` (
 --
 
 INSERT INTO `cars` (`id`, `name`, `model`, `type`, `fuel`, `price`, `img`, `year`) VALUES
-(4, '', 'CRETA SUV ', '5 SETER', 'DISEL', 15000, 'cr.png', 2021),
+(4, 'Creta hyundai', 'CRETA SUV ', '5 SETER', 'DISEL', 15000, 'cr.png', 2021),
 (5, '', 'Maruti Suzuki Ertiga', '7seter', 'Diesel/petrol', 15000, 'm2.jpg', 2021),
 (6, '', 'Maruti Suzuki Alto', '4 seter', 'Diesel', 20000, 'm1.webp', 2020),
 (8, '', 'Kia Carens Sonet', '6seter', 'Diesel', 30000, 'm4.webp', 2021),
@@ -83,7 +85,8 @@ INSERT INTO `cars` (`id`, `name`, `model`, `type`, `fuel`, `price`, `img`, `year
 (14, '', 'Mercedes-Benz', '2 seter', 'electic/Diesel', 80000, 'm8.jpg', 2022),
 (15, '', 'BMW 8 Series Gran', '4 seter', 'Petrol', 80000, 'm9.webp', 2019),
 (16, '', ' Land Rover-Velar-TBG 869', '8 seter', 'Diesel/pertorl', 80000, 'm10.jpg', 2019),
-(17, '', 'Jaguar XJL Portfolio', '4 seter', 'Diesel', 82000, 'm11.jpg', 2015);
+(17, '', 'Jaguar XJL Portfolio', '4 seter', 'Diesel', 82000, 'm11.jpg', 2015),
+(27, 'aulto123', 'ha355w', '4', 'pertil', 99999, 'toyota-fortuner.jpg', 5222);
 
 -- --------------------------------------------------------
 
@@ -103,7 +106,12 @@ CREATE TABLE `feedback` (
 
 INSERT INTO `feedback` (`id`, `name`, `feedback`) VALUES
 (1, 'amol kumar', 'provide best facility of cars'),
-(2, 'dilip', 'Search Best Motor Car Insurance, Information from Trusted Internet Sources. Explore the Best Info Now. 100+ Unique Results. Find All Info You Want. Quick Answers. Useful & Relevant. Find in Seconds. Services');
+(2, 'dilip', 'Search Best Motor Car Insurance, Information from Trusted Internet Sources. Explore the Best Info Now. 100+ Unique Results. Find All Info You Want. Quick Answers. Useful & Relevant. Find in Seconds. Services'),
+(3, 'rahul', 'ghhhhdfdaf'),
+(4, 'Karmjeet kaur', 'goood'),
+(5, 'Karmjeet kaur', 'goood'),
+(6, 'Karmjeet kaur', 'goood'),
+(7, 'Karmjeet kaur', 'goood');
 
 -- --------------------------------------------------------
 
@@ -127,11 +135,13 @@ INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
 (10, 'mehfuj', 'mehfuj07861313@gmail.com', 'mehfuj0786'),
 (11, 'mehfuj alam', 'mehfuj0783@gmail.com', 'alam'),
 (12, 'rahul', 'rahulgupta164233@gmail.com', 'rahul'),
-(13, 'am', 'am@gmail.com', 'jsdkja'),
 (14, 'rahulgupta@gmail.com', 'om@om.com', '$2y$10$pZ4V/HJMwAHKM5gTlSV6sevqbh9jrkEDYLJ/WCFEc6/OXF45YTB5i'),
 (15, 'hello', 'hello@gm.com', '$2y$10$gq4Fw/TZ.J1B7Xuo7S7y7OlBh7G98ki1bS5hAkEw0SSjeWfG7KsWq'),
 (16, 'dilip kumar', 'dilip12345@gmail.com', '$2y$10$laYhyQVNGmwX5IDdtZJefOT8Gz89QrzKNxFHZgyfkqQITin2cq0a6'),
-(17, 'dilip ', 'dilip1200@gamil.com', '$2y$10$RKoHLPoxZY.R3imyzT0Q1OD0mC5MG9Fj/6CqXt/a2hNetxQYAp7wO');
+(17, 'dilip ', 'dilip1200@gamil.com', '$2y$10$RKoHLPoxZY.R3imyzT0Q1OD0mC5MG9Fj/6CqXt/a2hNetxQYAp7wO'),
+(18, 'admin', 'admin12233@gamil.com', '$2y$10$I.ETHcCx7/staGcfAUVsk.NXjqpe2crxdwo5vD41ptLB4da.fq3dy'),
+(19, 'shilpi', 'shilpbahatt122@gmail.com', '$2y$10$Ml6wKKlLUj1qlLZ9hZQvzOfrOnKBxRBuXFfW3RBzlqmXae53ZYZlW'),
+(20, 'shrikant', 'shrikant2345@gmail.com', '$2y$10$4WC/huGiJ.x.2JKiuN4BiuQlVgCd1IygN0q0C8SgFS5ZVOgub5FMW');
 
 --
 -- Indexes for dumped tables
@@ -151,6 +161,12 @@ ALTER TABLE `cars`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -165,19 +181,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(38) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(38) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `cars`
 --
 ALTER TABLE `cars`
-  MODIFY `id` int(38) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(38) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
+
+--
+-- AUTO_INCREMENT for table `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(38) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(38) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
