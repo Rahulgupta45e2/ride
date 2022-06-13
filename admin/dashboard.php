@@ -3,7 +3,7 @@ require_once('../init.php');
 require_once('../header.php');
 if( !isset($_SESSION['role']) && $_SESSION['role'] != 'admin'){
     $_SESSION['admin_err'] = "You should loggedin as Admin";
-    header('location: admin.php');
+    header('location: adminlog.php');
 }
 ?>
 <html lang="en">

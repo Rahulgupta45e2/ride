@@ -22,7 +22,7 @@
         <?php
         $admin_path_only4admin ='';
         if(isset($_SESSION['role'])){
-            $admin_path_only4admin = 'admin/dashboard.php';
+            $admin_path_only4admin = '/ride&drive/admin/book.php';
         }
         if(!isset($_SESSION['name'])){
             echo '<a href="signup.php" class="sign-up">sign up</a>';
